@@ -47,6 +47,7 @@ class TempSensor : public Sensor
 {
 public:
     explicit TempSensor(std::uint8_t sensorId) : Sensor(sensorId) {}
+    ~TempSensor() { close(sockfd); }
 
     void sendResult() override;
     void subscribe() override;

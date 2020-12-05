@@ -15,6 +15,7 @@ class ControlUnit
 {
 public:
     ControlUnit();
+    ~ControlUnit() { close(sockfd); }
 
     void run();
     void receive();
